@@ -317,9 +317,11 @@ class CalculatorGUI(QWidget):
     #       Symbol buttons signals
     def pressed_button_backspace(self):
         # Displaying to the console, so we know the key has been pressed
-        print("9 has been pressed")
+        print("⌫ has been pressed")
         # Calling the string_manipulator to handle the input/output
-        self.display_box.setText(self.display_box.text() + "9")
+        st = self.display_box.text()
+        st = st[:-1]
+        self.display_box.setText(st)
 
     def pressed_button_clear_all(self):
         # Displaying to the console, so we know the key has been pressed
