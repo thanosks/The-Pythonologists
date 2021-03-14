@@ -192,86 +192,32 @@ class CalculatorGUI(QWidget):
         # Connecting the signals/events to the corresponding functions
         #   Number button signals/events
         self.button_num0.clicked.connect(self.pressed_num0)
-        self.button_num0.clicked.connect(self.pressed_num1)
-        self.button_num0.clicked.connect(self.pressed_num2)
-        self.button_num0.clicked.connect(self.pressed_num3)
-        self.button_num0.clicked.connect(self.pressed_num4)
-        self.button_num0.clicked.connect(self.pressed_num5)
-        self.button_num0.clicked.connect(self.pressed_num6)
-        self.button_num0.clicked.connect(self.pressed_num7)
-        self.button_num0.clicked.connect(self.pressed_num8)
-        self.button_num0.clicked.connect(self.pressed_num9)
+        self.button_num1.clicked.connect(self.pressed_num1)
+        self.button_num2.clicked.connect(self.pressed_num2)
+        self.button_num3.clicked.connect(self.pressed_num3)
+        self.button_num4.clicked.connect(self.pressed_num4)
+        self.button_num5.clicked.connect(self.pressed_num5)
+        self.button_num6.clicked.connect(self.pressed_num6)
+        self.button_num7.clicked.connect(self.pressed_num7)
+        self.button_num8.clicked.connect(self.pressed_num8)
+        self.button_num9.clicked.connect(self.pressed_num9)
 
         #   Operand button signals/events
+        self.button_equal.clicked.connect(self.pressed_button_equal)
         self.button_plus.clicked.connect(self.pressed_button_plus)
+        self.button_minus.clicked.connect(self.pressed_button_minus)
+        self.button_times.clicked.connect(self.pressed_button_times)
+        self.button_division.clicked.connect(self.pressed_button_division)
 
         #   Symbol button signals/events
-
+        self.button_backspace.clicked.connect(self.pressed_button_backspace)
+        self.button_clear_all.clicked.connect(self.pressed_button_clear_all)
+        self.button_clear.clicked.connect(self.pressed_button_clear)
+        self.button_dot.clicked.connect(self.pressed_button_dot)
         # ----------------------------------
         # ~~~~~~~~~~ END OF CONSTRUCTOR ~~~~~~~~~~
 
     # Handles the events happening inside each slot function
-    def string_manipulator(self, flag):
-        if flag == "0":
-            # Altering values to our attributes
-            self.display_box_string = self.display_box.text() + "0"
-
-            # Assigning values to our attributes
-            self.display_box.setText(self.display_box_string)
-        elif flag == "1":
-            # Altering values to our attributes
-            self.display_box_string = self.display_box.text() + "1"
-
-            # Assigning values to our attributes
-            self.display_box.setText(self.display_box_string)
-        elif flag == "2":
-            # Altering values to our attributes
-            self.display_box_string = self.display_box.text() + "2"
-
-            # Assigning values to our attributes
-            self.display_box.setText(self.display_box_string)
-        elif flag == "3":
-            # Altering values to our attributes
-            self.display_box_string = self.display_box.text() + "3"
-
-            # Assigning values to our attributes
-            self.display_box.setText(self.display_box_string)
-        elif flag == "4":
-            # Altering values to our attributes
-            self.display_box_string = self.display_box.text() + "4"
-
-            # Assigning values to our attributes
-            self.display_box.setText(self.display_box_string)
-        elif flag == "5":
-            # Altering values to our attributes
-            self.display_box_string = self.display_box.text() + "5"
-
-            # Assigning values to our attributes
-            self.display_box.setText(self.display_box_string)
-        elif flag == "6":
-            # Altering values to our attributes
-            self.display_box_string = self.display_box.text() + "6"
-
-            # Assigning values to our attributes
-            self.display_box.setText(self.display_box_string)
-        elif flag == "7":
-            # Altering values to our attributes
-            self.display_box_string = self.display_box.text() + "7"
-
-            # Assigning values to our attributes
-            self.display_box.setText(self.display_box_string)
-        elif flag == "8":
-            # Altering values to our attributes
-            self.display_box_string = self.display_box.text() + "8"
-
-            # Assigning values to our attributes
-            self.display_box.setText(self.display_box_string)
-        elif flag == "9":
-            # Altering values to our attributes
-            self.display_box_string = self.display_box.text() + "9"
-
-            # Assigning values to our attributes
-            self.display_box.setText(self.display_box_string)
 
     # The Slot decorator is responsible for the signal/event relationship/connection
     @Slot()
@@ -281,84 +227,117 @@ class CalculatorGUI(QWidget):
         # Displaying to the console, so we know the key has been pressed
         print("0 has been pressed")
         # Calling the string_manipulator to handle the input/output
-        self.string_manipulator("0")
+        self.display_box.setText(self.display_box.text() + "0")
 
     def pressed_num1(self):
         # Displaying to the console, so we know the key has been pressed
         print("1 has been pressed")
         # Calling the string_manipulator to handle the input/output
-        self.string_manipulator("1")
+        self.display_box.setText(self.display_box.text() + "1")
 
     def pressed_num2(self):
         # Displaying to the console, so we know the key has been pressed
         print("2 has been pressed")
         # Calling the string_manipulator to handle the input/output
-        self.string_manipulator("2")
+        self.display_box.setText(self.display_box.text() + "2")
 
     def pressed_num3(self):
         # Displaying to the console, so we know the key has been pressed
         print("3 has been pressed")
         # Calling the string_manipulator to handle the input/output
-        self.string_manipulator("3")
+        self.display_box.setText(self.display_box.text() + "3")
 
     def pressed_num4(self):
         # Displaying to the console, so we know the key has been pressed
         print("4 has been pressed")
         # Calling the string_manipulator to handle the input/output
-        self.string_manipulator("4")
+        self.display_box.setText(self.display_box.text() + "4")
 
     def pressed_num5(self):
         # Displaying to the console, so we know the key has been pressed
         print("5 has been pressed")
         # Calling the string_manipulator to handle the input/output
-        self.string_manipulator("5")
+        self.display_box.setText(self.display_box.text() + "5")
 
     def pressed_num6(self):
         # Displaying to the console, so we know the key has been pressed
         print("6 has been pressed")
         # Calling the string_manipulator to handle the input/output
-        self.string_manipulator("6")
+        self.display_box.setText(self.display_box.text() + "6")
 
     def pressed_num7(self):
         # Displaying to the console, so we know the key has been pressed
         print("7 has been pressed")
         # Calling the string_manipulator to handle the input/output
-        self.string_manipulator("7")
+        self.display_box.setText(self.display_box.text() + "7")
 
     def pressed_num8(self):
         # Displaying to the console, so we know the key has been pressed
         print("8 has been pressed")
         # Calling the string_manipulator to handle the input/output
-        self.string_manipulator("8")
+        self.display_box.setText(self.display_box.text() + "8")
 
     def pressed_num9(self):
         # Displaying to the console, so we know the key has been pressed
         print("9 has been pressed")
         # Calling the string_manipulator to handle the input/output
-        self.string_manipulator("9")
+        self.display_box.setText(self.display_box.text() + "9")
 
     # #       Operand buttons signals
-    # def pressed_button_equal(self):
+    def pressed_button_equal(self):
+        # Displaying to the console, so we know the key has been pressed
+        print("= has been pressed")
+        # Calling the string_manipulator to handle the input/output
+        self.display_box.setText(str(sympy.sympify(self.display_box.text())))
+
     def pressed_button_plus(self):
-        # Displaying to the console so we know the key has been pressed
-        print("+ sign has been pressed")
+        # Displaying to the console, so we know the key has been pressed
+        print("+ has been pressed")
+        # Calling the string_manipulator to handle the input/output
+        self.display_box.setText(self.display_box.text() + "+")
 
-        # Altering values to our attributes
-        # (Most thing here will probably be done with a 'string_manipulator' function, but for now it's like that)
-        self.symbol_box_string = self.display_box_string + "+"
+    def pressed_button_minus(self):
+        # Displaying to the console, so we know the key has been pressed
+        print("- has been pressed")
+        # Calling the string_manipulator to handle the input/output
+        self.display_box.setText(self.display_box.text() + "-")
 
-        # Assigning values to our attributes
-        self.symbol_box.setText(self.symbol_box_string)
+    def pressed_button_times(self):
+        # Displaying to the console, so we know the key has been pressed
+        print("* has been pressed")
+        # Calling the string_manipulator to handle the input/output
+        self.display_box.setText(self.display_box.text() + "*")
+
+    def pressed_button_division(self):
+        # Displaying to the console, so we know the key has been pressed
+        print("/ has been pressed")
+        # Calling the string_manipulator to handle the input/output
+        self.display_box.setText(self.display_box.text() + "/")
+
+    #       Symbol buttons signals
+    def pressed_button_backspace(self):
+        # Displaying to the console, so we know the key has been pressed
+        print("9 has been pressed")
+        # Calling the string_manipulator to handle the input/output
+        self.display_box.setText(self.display_box.text() + "9")
+
+    def pressed_button_clear_all(self):
+        # Displaying to the console, so we know the key has been pressed
+        print("CE has been pressed")
+        # Calling the string_manipulator to handle the input/output
         self.display_box.clear()
 
-    # def pressed_button_minus(self):
-    # def pressed_button_times(self):
-    # def pressed_button_division(self):
-    # #       Symbol buttons signals
-    # def pressed_button_backspace(self):
-    # def pressed_button_clear_all(self):
-    # def pressed_button_clear(self):
-    # def pressed_button_dot(self):
+    def pressed_button_clear(self):
+        # Displaying to the console, so we know the key has been pressed
+        print("C has been pressed")
+        # Calling the string_manipulator to handle the input/output
+        self.display_box.clear()
+
+    def pressed_button_dot(self):
+        # Displaying to the console, so we know the key has been pressed
+        print(". has been pressed")
+        # Calling the string_manipulator to handle the input/output
+        self.display_box.setText(self.display_box.text() + ".")
 
 
 if __name__ == '__main__':
