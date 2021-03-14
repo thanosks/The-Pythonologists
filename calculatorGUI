@@ -59,8 +59,10 @@ class CalculatorGUI(QWidget):
         #       Symbol buttons
         self.button_backspace = QPushButton("⌫")
         self.button_clear_all = QPushButton("CE")
-        self.button_clear = QPushButton("C")
+        # self.button_clear = QPushButton("C")
         self.button_dot = QPushButton(".")
+        self.button_left_bracket = QPushButton("(")
+        self.button_right_bracket = QPushButton(")")
         # --------------------------
         # ********** ATTRIBUTE (CHANGING BEHAVIOUR) SECTION **********
         # ---------------------------------
@@ -132,8 +134,10 @@ class CalculatorGUI(QWidget):
         #           Setting the size policy
         self.button_backspace.setSizePolicy(QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding))
         self.button_clear_all.setSizePolicy(QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding))
-        self.button_clear.setSizePolicy(QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding))
+        # self.button_clear.setSizePolicy(QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding))
         self.button_dot.setSizePolicy(QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding))
+        self.button_left_bracket.setSizePolicy(QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding))
+        self.button_right_bracket.setSizePolicy(QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding))
         #           Setting the font
         self.button_dot.setFont(self.font_symbol)
         # ---------------------------------
@@ -155,32 +159,35 @@ class CalculatorGUI(QWidget):
         #       QPushButton attributes
         #           Regards the second row of the grid
         layout.addWidget(self.button_clear_all, 1, 1)
-        layout.addWidget(self.button_clear, 1, 2)
-        layout.addWidget(self.button_backspace, 1, 3)
-        layout.addWidget(self.button_division, 1, 4)
+        layout.addWidget(self.button_backspace, 1, 2)
+        # layout.addWidget(self.button_clear, 1, 2)
+        layout.addWidget(self.button_left_bracket, 1, 3)
+        layout.addWidget(self.button_right_bracket, 1, 4)
 
         #           Regards the third row of the grid
         layout.addWidget(self.button_num7, 2, 1)
         layout.addWidget(self.button_num8, 2, 2)
         layout.addWidget(self.button_num9, 2, 3)
-        layout.addWidget(self.button_times, 2, 4)
+        layout.addWidget(self.button_division, 2, 4)
 
         #           Regards the fourth row of the grid
         layout.addWidget(self.button_num4, 3, 1)
         layout.addWidget(self.button_num5, 3, 2)
         layout.addWidget(self.button_num6, 3, 3)
-        layout.addWidget(self.button_minus, 3, 4)
+        layout.addWidget(self.button_times, 3, 4)
 
         #           Regards the fifth row of the grid
         layout.addWidget(self.button_num1, 5, 1)
         layout.addWidget(self.button_num2, 5, 2)
         layout.addWidget(self.button_num3, 5, 3)
+        layout.addWidget(self.button_minus, 5, 4)
         layout.addWidget(self.button_plus, 5, 4)
 
         #           Regards the sixth row of the grid
+        layout.addWidget(self.button_dot, 6, 1)
         layout.addWidget(self.button_num0, 6, 2)
         layout.addWidget(self.button_equal, 6, 3)
-        layout.addWidget(self.button_dot, 6, 4)
+
         # -----------------
         # ********** ASSIGNING LAYOUT SECTION **********
         # -------------------------------------
@@ -212,7 +219,7 @@ class CalculatorGUI(QWidget):
         #   Symbol button signals/events
         self.button_backspace.clicked.connect(self.pressed_button_backspace)
         self.button_clear_all.clicked.connect(self.pressed_button_clear_all)
-        self.button_clear.clicked.connect(self.pressed_button_clear)
+        # self.button_clear.clicked.connect(self.pressed_button_clear)
         self.button_dot.clicked.connect(self.pressed_button_dot)
         # ----------------------------------
         # ~~~~~~~~~~ END OF CONSTRUCTOR ~~~~~~~~~~
@@ -329,11 +336,11 @@ class CalculatorGUI(QWidget):
         # Calling the string_manipulator to handle the input/output
         self.display_box.clear()
 
-    def pressed_button_clear(self):
-        # Displaying to the console, so we know the key has been pressed
-        print("C has been pressed")
-        # Calling the string_manipulator to handle the input/output
-        self.display_box.clear()
+    # def pressed_button_clear(self):
+    #     # Displaying to the console, so we know the key has been pressed
+    #     print("C has been pressed")
+    #     # Calling the string_manipulator to handle the input/output
+    #     self.display_box.clear()
 
     def pressed_button_dot(self):
         # Displaying to the console, so we know the key has been pressed
