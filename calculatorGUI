@@ -192,6 +192,15 @@ class CalculatorGUI(QWidget):
         # Connecting the signals/events to the corresponding functions
         #   Number button signals/events
         self.button_num0.clicked.connect(self.pressed_num0)
+        self.button_num0.clicked.connect(self.pressed_num1)
+        self.button_num0.clicked.connect(self.pressed_num2)
+        self.button_num0.clicked.connect(self.pressed_num3)
+        self.button_num0.clicked.connect(self.pressed_num4)
+        self.button_num0.clicked.connect(self.pressed_num5)
+        self.button_num0.clicked.connect(self.pressed_num6)
+        self.button_num0.clicked.connect(self.pressed_num7)
+        self.button_num0.clicked.connect(self.pressed_num8)
+        self.button_num0.clicked.connect(self.pressed_num9)
 
         #   Operand button signals/events
         self.button_plus.clicked.connect(self.pressed_button_plus)
@@ -264,8 +273,6 @@ class CalculatorGUI(QWidget):
             # Assigning values to our attributes
             self.display_box.setText(self.display_box_string)
 
-
-
     # The Slot decorator is responsible for the signal/event relationship/connection
     @Slot()
     # Slots & signals
@@ -276,15 +283,60 @@ class CalculatorGUI(QWidget):
         # Calling the string_manipulator to handle the input/output
         self.string_manipulator("0")
 
-    # def pressed_num1(self):
-    # def pressed_num2(self):
-    # def pressed_num3(self):
-    # def pressed_num4(self):
-    # def pressed_num5(self):
-    # def pressed_num6(self):
-    # def pressed_num7(self):
-    # def pressed_num8(self):
-    # def pressed_num9(self):
+    def pressed_num1(self):
+        # Displaying to the console, so we know the key has been pressed
+        print("1 has been pressed")
+        # Calling the string_manipulator to handle the input/output
+        self.string_manipulator("1")
+
+    def pressed_num2(self):
+        # Displaying to the console, so we know the key has been pressed
+        print("2 has been pressed")
+        # Calling the string_manipulator to handle the input/output
+        self.string_manipulator("2")
+
+    def pressed_num3(self):
+        # Displaying to the console, so we know the key has been pressed
+        print("3 has been pressed")
+        # Calling the string_manipulator to handle the input/output
+        self.string_manipulator("3")
+
+    def pressed_num4(self):
+        # Displaying to the console, so we know the key has been pressed
+        print("4 has been pressed")
+        # Calling the string_manipulator to handle the input/output
+        self.string_manipulator("4")
+
+    def pressed_num5(self):
+        # Displaying to the console, so we know the key has been pressed
+        print("5 has been pressed")
+        # Calling the string_manipulator to handle the input/output
+        self.string_manipulator("5")
+
+    def pressed_num6(self):
+        # Displaying to the console, so we know the key has been pressed
+        print("6 has been pressed")
+        # Calling the string_manipulator to handle the input/output
+        self.string_manipulator("6")
+
+    def pressed_num7(self):
+        # Displaying to the console, so we know the key has been pressed
+        print("7 has been pressed")
+        # Calling the string_manipulator to handle the input/output
+        self.string_manipulator("7")
+
+    def pressed_num8(self):
+        # Displaying to the console, so we know the key has been pressed
+        print("8 has been pressed")
+        # Calling the string_manipulator to handle the input/output
+        self.string_manipulator("8")
+
+    def pressed_num9(self):
+        # Displaying to the console, so we know the key has been pressed
+        print("9 has been pressed")
+        # Calling the string_manipulator to handle the input/output
+        self.string_manipulator("9")
+
     # #       Operand buttons signals
     # def pressed_button_equal(self):
     def pressed_button_plus(self):
